@@ -1,4 +1,5 @@
 html {
+    height: 100%;
     --main-bg-color: #1a1a1d;
     --main-fg-color: white;
     --secondary-bg-color: #4e4e50;
@@ -15,6 +16,12 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
     background-color: var(--main-bg-color);
 }
 
@@ -52,23 +59,26 @@ a:hover {
     margin: 3rem auto 0 auto;
     max-width: 60rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
+    flex: 1;
 }
 
 .sub-section {
     min-width: 20rem;
+    padding: 0 2rem;
+}
+
+.sub-section-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .section-title {
     border-bottom: 1px solid var(--secondary-bg-color);
     padding: 0.5rem 3rem;
     text-align: center;
-}
-
-.section-torneo {
-    margin-right: 3rem;
 }
 
 .comment {
@@ -332,26 +342,42 @@ p.error {
     width: 2rem;
 }
 
+#semilla {
+    margin-left: 0.5rem;
+    min-width: 13rem;
+}
+
+.semilla-contenedor {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin: 3rem auto;
+}
+
+footer {
+    padding: 2rem 0;
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     html {
         font-size: 14px;
     }
 
     #main-header {
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     #main-section {
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
         max-width: none;
     }
     
     .sub-section {
         min-width: none;
-    }
-
-    .section-torneo {
-        margin-right: 0;
+        padding: 0 1rem;
     }
 
     .section-cartas {

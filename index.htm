@@ -17,25 +17,34 @@
         <p class="indent">Organizar torneos automáticamente. Selector de cartas al azar. <a href="https://github.com/Wyr0X/torneos-clash" target="_blank">Código fuente</a>.</p>
     </header>
     <section id="main-section">
-        <div class="sub-section section-torneo">
-            <p class="section-title">Organizar torneo</p>
-            <p class="comment">Ingrese al menos 2 jugadores.</p>
-            <div class="jugadores">
-                <input type="text" class="jugador" placeholder="Jugador 1" data-index="0" />
+        <div class="sub-section-row">
+            <div class="sub-section section-torneo">
+                <p class="section-title">Organizar torneo</p>
+                <p class="comment">Ingrese al menos 2 jugadores.</p>
+                <div class="jugadores">
+                    <input type="text" class="jugador" placeholder="Jugador 1" data-index="0" />
+                </div>
+                <button id="crear-torneo" disabled>Crear</button>
             </div>
-            <button id="crear-torneo" disabled>Crear</button>
+            <div class="sub-section section-cartas">
+                <p class="section-title">Seleccionar cartas al azar</p>
+                <label>
+                    Cantidad:
+                    <input type="number" class="cantidad_cartas" value="2" min="1" max="8" />
+                </label>
+                <button id="sortear-cartas" disabled>Sortear</button>
+                <div class="loading-bar-container">
+                    <div class="loading-bar"></div>
+                </div>
+            </div>
         </div>
-        <div class="sub-section section-cartas">
-            <p class="section-title">Seleccionar cartas al azar</p>
-            <label>
-                Cantidad:
-                <input type="number" class="cantidad_cartas" value="2" min="1" max="8" />
-            </label>
-            <button id="sortear-cartas" disabled>Sortear</button>
-            <div class="loading-bar-container">
-                <div class="loading-bar"></div>
-            </div>
+        <div class="semilla-contenedor">
+            <label for="semilla">Semilla:</label>
+            <input type="text" id="semilla" placeholder="Dejar vacío para usar una aleatoria" />
         </div>
     </section>
+    <footer>
+        <p>&copy; 2021 por <a href="https://alexiscaraballo.com" target="_blank">WyroX</a></p>
+    </footer>
 </body>
 </html>
